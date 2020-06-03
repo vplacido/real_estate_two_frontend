@@ -12,15 +12,15 @@ class ListingsList extends React.Component {
   }
 
   //use to fetch from the attom api for real data
-  renderAPI() {
-    fetch(`https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?postalcode=${this.props.searchTerm}`, {
-            headers: {
-                apiKey: 'eddcf6b022ef6027fc5e32be220795ca',
-                Accept: 'application/json',
-            }
-        }).then(response => response.json())
-        .then(json => this.setState({properties: json.property.filter(l => l.location.latitiude !== "0.000000" && l.location.longitude !== "0.000000")}))
-  }
+  // renderAPI() {
+  //   fetch(`https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?postalcode=${this.props.searchTerm}`, {
+  //           headers: {
+  //               apiKey: 'eddcf6b022ef6027fc5e32be220795ca',
+  //               Accept: 'application/json',
+  //           }
+  //       }).then(response => response.json())
+  //       .then(json => this.setState({properties: json.property.filter(l => l.location.latitiude !== "0.000000" && l.location.longitude !== "0.000000")}))
+  // }
   
   render() {
     const listings = this.props.listings.listings
